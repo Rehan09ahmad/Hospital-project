@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #00bcd4;
+    padding: 15px 60px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 8px 10px;
+}
+
+/* 🔥 DROPDOWN */
+.dept {
+    position: relative;
+}
+
+/* dropdown fix */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 44px);
+    left: 0;
+    background: white;
+    min-width: 160px;
+    z-index: 999;
+    display: block;          /* IMPORTANT */
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s ease;
+}
+
+/* show */
+.dropdown.show {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.dropdown li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+/* dropdown ko flex se forcefully bachao */
+nav ul ul {
+    display: block;
+}
+/* ----------- */
+
+.dept:hover .dropdown {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.dropdown {
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    transition: 0.3s;
+}
+
+.dropdown li a:hover {
+    background: #00bcd4;
+    color: white;
+}
