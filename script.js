@@ -8,3 +8,11 @@ function openTab(event, tabId) {
   document.getElementById(tabId).classList.add("active");
   event.target.classList.add("active");
 }
+
+
+
+// menu
+
+document.querySelector(".menu").addEventListener("click", function(){
+    document.querySelector("nav ul").classList.toggle("show");
+});
