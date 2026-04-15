@@ -23,6 +23,8 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 25px;
+    width: 100%;
+    margin-left: 20px;
 }
 
 nav ul li {
@@ -107,4 +109,35 @@ nav ul ul {
 .dropdown li a:hover {
     background: #00bcd4;
     color: white;
+}
+
+/* scrolling text animation  */
+
+.ticker {
+    width: 100%;
+    background: black;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ticker p {
+    display: inline-block;
+    animation: scrollText 20s linear infinite; /* sirf ek line */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    font-weight: 500;
+    /* text-rendering: optimizeLegibility; */
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
