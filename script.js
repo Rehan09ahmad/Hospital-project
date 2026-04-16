@@ -1,3 +1,11 @@
+// menu
+
+document.querySelector(".menu").addEventListener("click", function(){
+    document.querySelector("nav ul").classList.toggle("show");
+});
+
+
+
 function openTab(event, tabId) {
   let contents = document.querySelectorAll(".tab-content");
   contents.forEach(tab => tab.classList.remove("active"));
@@ -9,10 +17,26 @@ function openTab(event, tabId) {
   event.target.classList.add("active");
 }
 
+/* SLIDER IMGAES---------*/
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
 
+  speed: 800,   // 👈 smooth transition speed (important)
 
-// menu
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 
-document.querySelector(".menu").addEventListener("click", function(){
-    document.querySelector("nav ul").classList.toggle("show");
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 0,
+    depth: 120,
+    modifier: 1,
+    slideShadows: false, // 👈 shadow remove = smoother feel
+  },
 });

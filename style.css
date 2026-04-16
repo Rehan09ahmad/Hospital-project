@@ -4,13 +4,15 @@
     box-sizing: border-box;
     font-family: Arial;
 }
-
+body{
+    background-color: rgba(250, 235, 215, 0.826);
+}
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #00bcd4;
-    padding: 4px 60px;
+    padding: 0px 15px;
     height:70px;
     width: 100%;
 }
@@ -38,6 +40,14 @@ nav ul li a {
     font-size: 18px;
     padding: 8px 10px;
 }
+
+nav ul li a:hover {
+    font-size: 18px;
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.1);
+     
+}
 /*----------menu bar-------------*/
 
 /* 🔥 DROPDOWN */
@@ -47,39 +57,16 @@ nav ul li a {
     cursor: pointer;
 }
 
-/* responsive---------------------------------------------------------- */
-@media (max-width: 768px){
-
-    .menu{
-        display: block;
-    }
-
-    nav ul{
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: white;
-        display: none;
-        padding: 20px;
-    }
-
-    nav ul.show{
-        display: flex;
-    }
-}
-
 
 /* dropdown fix */
 .dropdown {
     position: absolute;
-    top: calc(100% + 44px);
+    top: 100%;
     left: 0;
     background: white;
     min-width: 160px;
     z-index: 999;
-    display: block;          /* IMPORTANT */
+    display: block;          
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
@@ -105,7 +92,7 @@ nav ul li a {
     color: white;
 }
 
-/* scrolling text animation  */
+/* scrolling text animation  start */
 
 .ticker {
     width: 100%;
@@ -134,13 +121,64 @@ nav ul li a {
         transform: translateX(-100%);
     }
 }
+/* scrolling text animation  end */
 
-/* tab section  */
+/* <!-- slider images section  stater --> */
+.carousel {
+  width: 95%;
+  margin: 30px auto;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;   /* 👈 smooth snap */
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+/* hide scrollbar */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 80%;     /* 👈 center big card */
+  scroll-snap-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* side preview effect */
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 40%;
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* <!-- slider images section  end --> */
+
+
+/*------ tab section  stART -----------*/
 
 
 .tab-wrapper {
   width:60%;
-  height:20px auto;
   min-height: 500px;
   border: 2px solid #000;
   border-radius: 10px;
@@ -173,7 +211,7 @@ nav ul li a {
 
 .tab-content {
   display: none;
-  text-align: flex-start;   /* 👈 ye add karo */
+  text-align: flex-start;   
   padding: 10px;
   min-height: 400px;
 }
@@ -183,9 +221,11 @@ nav ul li a {
 }
 
 .tab-content img {
+  width: 100%;
   max-width: 200px;
   display: block;
   margin: 20px auto;
+  height: auto;
 }
 
 .tab-content p{
@@ -199,17 +239,183 @@ nav ul li a {
 /*---------------------responsive----------------------- */
 
 /*-------------------navbar responsive start---------------*/
+@media (max-width: 768px){
+
+    .menu{
+        display: block;
+    }
+
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        display: none;
+        padding: 20px;
+    }
+
+    nav ul.show{
+        display: flex;
+    }
+}
 
 /*-------------------navbar responsive end---------------*/
 
+/* ================= MOBILE (768px) start ================= */
 
 @media (max-width: 768px) {
   .tab-content {
     flex-direction: column;
     align-items: center;
   }
+
+  .tab-wrapper {
+    width: 90%; 
+    padding: 15px;
+  }
 }
 
+/* ================= MOBILE (768px)  end ================= */
 
+/* duty section  */
+ 
+table-container {
+    max-width: 1100px;
+    margin: auto;
+    overflow-x: auto;
+}
 
-/* ================= MOBILE (768px) ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 700px;
+}
+
+th {
+    background: #1f2a44;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+td {
+    vertical-align: top;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.doctor {
+    background: #cfc2fe;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.doctor:hover {
+    background: #e6f0ff;
+}
+
+.doctor span {
+    display: block;
+    font-weight: bold;
+}
+
+.doctor small {
+    color: #555;
+}
+
+/* Responsive */
+.table-container {
+    max-width: 1100px;
+    margin: auto;
+    overflow-x: auto; /* important */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 700px; /* important for mobile scroll */
+}
+
+@media (max-width: 768px) {
+
+    table {
+        min-width: 700px; /* scroll enable rahega */
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    .doctor {
+        font-size: 14px;
+    }
+}
+
+/* specialist */
+
+.title{
+    text-align:center;
+    margin-top:20px;
+}
+
+/* CARD */
+.cardd{
+    width: 100%;
+    max-width: 450px;
+    background:white;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+
+    flex-wrap: wrap;   /* important */
+}
+
+/* IMAGE */
+.cardd img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* TEXT */
+.info{
+    flex: 1;
+    min-width: 200px;
+}
+
+.info h3{
+    margin:0;
+}
+
+.info p{
+    margin:3px 0;
+    color:gray;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px){
+    .card{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info{
+        min-width: 100%;
+    }
+}
