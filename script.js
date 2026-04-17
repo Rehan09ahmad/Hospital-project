@@ -25,7 +25,7 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
   loop: true,
 
-  speed: 800,   // 👈 smooth transition speed (important)
+  speed: 800,   
 
   autoplay: {
     delay: 2500,
@@ -37,6 +37,8 @@ var swiper = new Swiper(".mySwiper", {
     stretch: 0,
     depth: 120,
     modifier: 1,
-    slideShadows: false, // 👈 shadow remove = smoother feel
+    slideShadows: false, 
   },
 });
+
+

@@ -15,6 +15,8 @@ body{
     padding: 0px 15px;
     height:70px;
     width: 100%;
+    position: relative;
+    z-index: 1000;
 }
 
 .logo {
@@ -106,7 +108,7 @@ nav ul li a:hover {
 
 .ticker p {
     display: inline-block;
-    animation: scrollText 20s linear infinite; /* sirf ek line */
+    animation: scrollText 20s linear infinite; 
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -124,51 +126,63 @@ nav ul li a:hover {
 /* scrolling text animation  end */
 
 /* <!-- slider images section  stater --> */
+
+
+.slider-section {
+    width: 100%;
+    padding: 40px 0; 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: 0.4s ease;
+}
+
+/* carousel size */
 .carousel {
-  width: 95%;
-  margin: 30px auto;
+    position: relative;
+    width: 240px;  
+    height: 220px;  
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+    
 }
 
-.carousel-track {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;   /* 👈 smooth snap */
-  scroll-behavior: smooth;
-  padding: 20px;
+.carousel span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(calc(var(--i) * 72deg)) translateZ(350px)
 }
 
-/* hide scrollbar */
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.carousel img {
+    width: 85%;
+    height:80%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top:20px;
 }
 
-.card {
-  flex: 0 0 80%;     /* 👈 center big card */
-  scroll-snap-align: center;
-  border-radius: 15px;
-  overflow: hidden;
-  height: 350px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+/* animation */
+@keyframes rotate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
 }
 
-/* side preview effect */
-@media (min-width: 768px) {
-  .card {
-    flex: 0 0 60%;
-  }
-}
+/* mobile */
+@media (max-width: 768px) {
+    .carousel {
+        width: 130px;
+        height: 160px;
+    }
 
-@media (min-width: 1024px) {
-  .card {
-    flex: 0 0 40%;
-  }
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    .carousel span {
+        transform: rotateY(calc(var(--i) * 72deg)) translateZ(150px);
+    }
 }
 
 /* <!-- slider images section  end --> */
@@ -336,20 +350,20 @@ td {
 .table-container {
     max-width: 1100px;
     margin: auto;
-    overflow-x: auto; /* important */
+    overflow-x: auto; 
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    min-width: 700px; /* important for mobile scroll */
+    min-width: 700px; 
 }
 
 @media (max-width: 768px) {
 
     table {
-        min-width: 700px; /* scroll enable rahega */
+        min-width: 700px;
     }
 
     th {
@@ -382,7 +396,7 @@ table {
     gap:15px;
     align-items:center;
 
-    flex-wrap: wrap;   /* important */
+    flex-wrap: wrap;  
 }
 
 /* IMAGE */
