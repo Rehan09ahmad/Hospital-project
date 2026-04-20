@@ -19,26 +19,32 @@ function openTab(event, tabId) {
 
 /* SLIDER IMGAES---------*/
 var swiper = new Swiper(".mySwiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  loop: true,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
 
-  speed: 800,   
+    coverflowEffect: {
+        rotate: 30,
+        stretch: 100,
+        depth: 100,
+        scale: 0.9,
+        modifier: 1,
+        slideShadows: false,
+    },
 
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+    loop: true,
 
-  coverflowEffect: {
-    rotate: 40,
-    stretch: 0,
-    depth: 120,
-    modifier: 1,
-    slideShadows: false, 
-  },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+
+    breakpoints: {
+        0: { slidesPerView: 1 },
+        600: { slidesPerView: 2 },
+        992: { slidesPerView: 3 }
+    }
 });
 
 

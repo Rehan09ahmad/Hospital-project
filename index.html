@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
 
@@ -40,20 +45,23 @@
 </header>
 
 <!-- slider images section  stater -->
-<div class="slider-section">
-    <div class="container">
-        <div class="carousel">
-            <span style="--i:1;"><img src="./hos-1.jpeg"></span>
-            <span style="--i:2;"><img src="./hos-2.jpeg"></span>
-            <span style="--i:3;"><img src="./hos-3.jpeg"></span>
-            <span style="--i:4;"><img src="./hos-4.jpeg"></span>
-            <span style="--i:5;"><img src="./hos-5.jpeg"></span>
-            <span style="--i:5;"><img src="./hos-6.jpeg"></span>
-            <span style="--i:5;"><img src="./hos-7.jpeg"></span>
-            <span style="--i:5;"><img src="./hos-8.jpeg"></span>
+<section>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./hos-1.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-2.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-3.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-4.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-5.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-6.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-7.jpeg" alt=""></div>
+            <div class="swiper-slide"><img src="./hos-8.jpeg" alt=""></div>
         </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-</div>
+</section>
 
 <!-- slider images section  end -->
 
@@ -246,10 +254,9 @@ Because of his dedication and experience, he has earned a good reputation in his
     </div>
 
 </div>
-
 </section>
-<!-- specialist section start -->
-
+<!-- specialist section end -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
